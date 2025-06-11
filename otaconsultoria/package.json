@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github": "ng build --base-href 'https://otaconsultoria.github.io/site-otaconsultoria/'",
+    "postbuild": "cp dist/otaconsultoria/index.html dist/otaconsultoria/404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:otaconsultoria": "node dist/otaconsultoria/server/server.mjs"
