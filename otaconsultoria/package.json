@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:github": "ng build --base-href 'https://otaconsultoria.github.io/site-otaconsultoria/'",
-    "postbuild": "cp dist/otaconsultoria/index.html dist/otaconsultoria/404.html",
+    "build:gh-pages": "ng build --base-href=https://otaconsultoria.github.io/site-otaconsultoria/",
+    "postbuild:gh-pages": "copy dist\\otaconsultoria\\browser\\index.html dist\\otaconsultoria\\browser\\404.html && echo.> dist\\otaconsultoria\\browser\\.nojekyll",
+    "deploy": "npm run build:gh-pages && npm run postbuild:gh-pages && npx angular-cli-ghpages --dir=dist/otaconsultoria/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:otaconsultoria": "node dist/otaconsultoria/server/server.mjs"
